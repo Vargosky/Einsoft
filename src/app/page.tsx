@@ -1,101 +1,125 @@
-import Image from "next/image";
+import React from 'react';
+import { ArrowRight, Shield, Cpu, Cloud, Users, ChevronRight, MessageSquare } from 'lucide-react';
 
-export default function Home() {
+const HomePage = () => {
+  const features = [
+    {
+      title: "Soluciones Cloud",
+      description: "Infraestructura escalable y segura para tu negocio",
+      icon: <Cloud className="w-6 h-6 text-indigo-600" />
+    },
+    {
+      title: "Ciberseguridad",
+      description: "Protección avanzada contra amenazas digitales",
+      icon: <Shield className="w-6 h-6 text-indigo-600" />
+    },
+    {
+      title: "Desarrollo Software",
+      description: "Aplicaciones personalizadas de alta calidad",
+      icon: <Cpu className="w-6 h-6 text-indigo-600" />
+    },
+    {
+      title: "Soporte 24/7",
+      description: "Asistencia técnica continua y personalizada",
+      icon: <Users className="w-6 h-6 text-indigo-600" />
+    }
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-indigo-900 to-blue-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
+            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div className="sm:text-center lg:text-left">
+                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                  <span className="block">Soluciones tecnológicas</span>
+                  <span className="block text-indigo-400">para el futuro</span>
+                </h1>
+                <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                  Transformamos tu negocio con soluciones informáticas innovadoras y personalizadas. Expertos en tecnología al servicio de tu éxito.
+                </p>
+                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div className="rounded-md shadow">
+                    <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                      Comenzar
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="mt-3 sm:mt-0 sm:ml-3">
+                    <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                      Contáctanos
+                      <MessageSquare className="ml-2 w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Features Section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Servicios</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Soluciones integrales para tu empresa
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Ofrecemos un conjunto completo de servicios tecnológicos diseñados para impulsar tu negocio.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {features.map((feature, index) => (
+                <div key={index} className="relative group">
+                  <div className="h-full bg-white rounded-lg shadow-lg transition-all duration-300 transform group-hover:-translate-y-2 p-6">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-100 group-hover:bg-indigo-600 transition-colors duration-300">
+                      {React.cloneElement(feature.icon, {
+                        className: "w-6 h-6 text-indigo-600 group-hover:text-white transition-colors duration-300"
+                      })}
+                    </div>
+                    <h3 className="mt-4 text-lg font-medium text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-2 text-base text-gray-500">
+                      {feature.description}
+                    </p>
+                    <div className="mt-4 flex items-center text-indigo-600">
+                      <span className="text-sm font-medium">Saber más</span>
+                      <ChevronRight className="ml-2 w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-indigo-700">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span className="block">¿Listo para transformar tu negocio?</span>
+            <span className="block text-indigo-200">Contacta con nuestro equipo hoy.</span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <button className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                Agenda una consulta
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default HomePage;
