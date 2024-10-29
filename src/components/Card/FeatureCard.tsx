@@ -27,7 +27,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
                     {description}
                 </p>
                 <div className="mt-4 flex items-center text-indigo-600">
-                    <span className="text-sm font-medium">Saber más</span>
+                    <span className="text-sm font-medium cursor-pointer">Saber más</span>
                     <ChevronRight className="ml-2 w-4 h-4" />
                 </div>
             </div>
